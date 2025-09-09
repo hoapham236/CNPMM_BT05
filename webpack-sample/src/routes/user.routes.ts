@@ -10,5 +10,11 @@ router.post('/users', userController.createUser);
 router.get('/users/:id', userController.getUserById);
 router.put('/users/:id', userController.updateUser);
 router.delete('/users/:id', userController.deleteUser);
+// Search và filter routes
+router.get('/search', userController.searchUsers.bind(userController));
+router.get('/advanced-search', userController.advancedSearch.bind(userController));
+router.get('/suggestions', userController.getUserSuggestions.bind(userController));
+router.get('/filter/:filterType', userController.filterUsers.bind(userController));
+
 
 export default router;
